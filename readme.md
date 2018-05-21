@@ -2,6 +2,8 @@
 
 # Nextion
 
+https://www.youtube.com/watch?v=FSRx8h8iBnk
+
 --------------------------------------------------------------------------------
 
 # Introduction
