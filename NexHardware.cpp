@@ -232,6 +232,22 @@ bool nexInit(void)
     return ret1 && ret2;
 }
 
+bool nexInitEx(int baudDebug, int baudDisplay, int pinRX, int pinTX)
+{
+    bool ret1 = false;
+    bool ret2 = false;
+    
+    dbSerialBegin(baudDebug);
+    nexSerial.begin(baudDisplay, SERIAL_8N1, pinRX, pinTX);
+    sendCommand("");
+    sendCommand("bkcmd=1");
+    ret1 = recvRetCommandFinished();
+    sendCommand("page 0");
+    ret2 = recvRetCommandFinished();
+    return ret1 && ret2;
+}
+
+
 void nexLoop(NexTouch *nex_listen_list[])
 {
     static uint8_t __buffer[10];
