@@ -29,6 +29,7 @@
  * @return true if success, false for failure. 
  */
 bool nexInit(void);
+bool nexInitEx(int baudDebug, int baudDisplay, int pinRX, int pinTX);
 
 /**
  * Listen touch event and calling callbacks attached before.
